@@ -10,6 +10,18 @@ Developed by **Mohamed LALAH / SecretoTools**.
 
 ---
 
+## Screenshots
+
+### Main Interface
+
+![Secreto TV Shortcuts main interface](docs/images/secreto-tv-shortcuts-main.jpeg)
+
+### More System Shortcuts
+
+![Secreto TV Shortcuts system settings shortcuts](docs/images/secreto-tv-shortcuts-settings.jpeg)
+
+---
+
 ## Features
 
 Secreto TV Shortcuts currently provides quick access to:
