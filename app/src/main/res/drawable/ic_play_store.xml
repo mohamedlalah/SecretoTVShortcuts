@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- White bag handle -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M8,7V6C8,3.79 9.79,2 12,2C14.21,2 16,3.79 16,6V7H14V6C14,4.9 13.1,4 12,4C10.9,4 10,4.9 10,6V7H8Z" />
+
+    <!-- White store bag -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M5,7H19C20.1,7 21,7.9 21,9V20C21,21.1 20.1,22 19,22H5C3.9,22 3,21.1 3,20V9C3,7.9 3.9,7 5,7Z" />
+
+    <!-- Larger green Play symbol -->
+    <path
+        android:fillColor="#FF25BC6D"
+        android:pathData="M9.5,10.3L17,14.5L9.5,18.7Z" />
+
+</vector>

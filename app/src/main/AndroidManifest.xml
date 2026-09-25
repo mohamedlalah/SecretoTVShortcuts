@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Bluetooth permission for Android 12+ -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- Legacy Bluetooth permissions for Android 11 and older -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" />
+
+    <!-- Bluetooth is supported but not required -->
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+
+    <!-- Android TV / Google TV -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+
+    <queries>
+
+        <!-- Google Play Store -->
+        <package android:name="com.android.vending" />
+
+        <!-- Android TV / Google TV Settings -->
+        <package android:name="com.android.tv.settings" />
+
+        <!-- Google TV / Android TV Add Accessory -->
+        <intent>
+            <action android:name="com.google.android.intent.action.CONNECT_INPUT" />
+        </intent>
+
+        <!-- Bluetooth Pairing -->
+        <intent>
+            <action android:name="android.settings.BLUETOOTH_PAIRING_SETTINGS" />
+        </intent>
+
+        <!-- Bluetooth Settings -->
+        <intent>
+            <action android:name="android.settings.BLUETOOTH_SETTINGS" />
+        </intent>
+
+        <!-- Main Settings -->
+        <intent>
+            <action android:name="android.settings.SETTINGS" />
+        </intent>
+
+        <!-- Wi-Fi Settings -->
+        <intent>
+            <action android:name="android.settings.WIFI_SETTINGS" />
+        </intent>
+
+        <!-- Applications Settings -->
+        <intent>
+            <action android:name="android.settings.APPLICATION_SETTINGS" />
+        </intent>
+
+        <!-- Storage Settings -->
+        <intent>
+            <action android:name="android.settings.INTERNAL_STORAGE_SETTINGS" />
+        </intent>
+
+        <!-- Display Settings -->
+        <intent>
+            <action android:name="android.settings.DISPLAY_SETTINGS" />
+        </intent>
+
+        <!-- Sound Settings -->
+        <intent>
+            <action android:name="android.settings.SOUND_SETTINGS" />
+        </intent>
+
+        <!-- Accessibility Settings -->
+        <intent>
+            <action android:name="android.settings.ACCESSIBILITY_SETTINGS" />
+        </intent>
+
+        <!-- Developer Options -->
+        <intent>
+            <action android:name="android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
+        </intent>
+
+        <!-- Keyboard / Input Method -->
+        <intent>
+            <action android:name="android.settings.INPUT_METHOD_SETTINGS" />
+        </intent>
+
+        <!-- Language -->
+        <intent>
+            <action android:name="android.settings.LOCALE_SETTINGS" />
+        </intent>
+
+        <!-- Date & Time -->
+        <intent>
+            <action android:name="android.settings.DATE_SETTINGS" />
+        </intent>
+
+        <!-- About Device -->
+        <intent>
+            <action android:name="android.settings.DEVICE_INFO_SETTINGS" />
+        </intent>
+
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:banner="@drawable/tv_banner"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SecretoTVShortcuts">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>

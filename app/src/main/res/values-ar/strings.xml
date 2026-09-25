@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Secreto TV Shortcuts</string>
+    <string name="app_tagline">كل ما تحتاجه بنقرة واحدة</string>
+
+    <string name="shortcut_play_store">Play Store</string>
+    <string name="shortcut_play_store_subtitle">فتح متجر Google Play</string>
+
+    <string name="shortcut_settings">الإعدادات</string>
+    <string name="shortcut_settings_subtitle">إعدادات النظام</string>
+
+    <string name="shortcut_wifi">Wi-Fi</string>
+    <string name="shortcut_wifi_subtitle">إعدادات الشبكة</string>
+
+    <string name="shortcut_bluetooth">Bluetooth</string>
+    <string name="shortcut_bluetooth_subtitle">أجهزة التحكم والملحقات</string>
+
+    <string name="shortcut_apps">التطبيقات</string>
+    <string name="shortcut_apps_subtitle">التطبيقات المثبتة</string>
+
+    <string name="shortcut_storage">التخزين</string>
+    <string name="shortcut_storage_subtitle">مساحة تخزين الجهاز</string>
+
+    <string name="shortcut_display">الشاشة</string>
+    <string name="shortcut_display_subtitle">إعدادات الصورة</string>
+
+    <string name="shortcut_sound">الصوت</string>
+    <string name="shortcut_sound_subtitle">إعدادات الصوت</string>
+
+    <string name="shortcut_accessibility">الوصول</string>
+    <string name="shortcut_accessibility_subtitle">خيارات إمكانية الوصول</string>
+
+    <string name="shortcut_developer">المطوّر</string>
+    <string name="shortcut_developer_subtitle">الإعدادات المتقدمة</string>
+
+    <string name="shortcut_keyboard">لوحة المفاتيح</string>
+    <string name="shortcut_keyboard_subtitle">لوحة المفاتيح والإدخال</string>
+
+    <string name="shortcut_language">اللغة</string>
+    <string name="shortcut_language_subtitle">لغة النظام</string>
+
+    <string name="shortcut_date_time">التاريخ والوقت</string>
+    <string name="shortcut_date_time_subtitle">الساعة والمنطقة الزمنية</string>
+
+    <string name="shortcut_about">حول</string>
+    <string name="shortcut_about_subtitle">معلومات الجهاز</string>
+
+</resources>

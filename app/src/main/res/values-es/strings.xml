@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Secreto TV Shortcuts</string>
+    <string name="app_tagline">Todo lo que necesitas, a un clic</string>
+
+    <string name="shortcut_play_store">Play Store</string>
+    <string name="shortcut_play_store_subtitle">Abrir Google Play Store</string>
+
+    <string name="shortcut_settings">Ajustes</string>
+    <string name="shortcut_settings_subtitle">Ajustes del sistema</string>
+
+    <string name="shortcut_wifi">Wi-Fi</string>
+    <string name="shortcut_wifi_subtitle">Ajustes de red</string>
+
+    <string name="shortcut_bluetooth">Bluetooth</string>
+    <string name="shortcut_bluetooth_subtitle">Mandos y accesorios</string>
+
+    <string name="shortcut_apps">Apps</string>
+    <string name="shortcut_apps_subtitle">Aplicaciones instaladas</string>
+
+    <string name="shortcut_storage">Almacén</string>
+    <string name="shortcut_storage_subtitle">Almacenamiento del dispositivo</string>
+
+    <string name="shortcut_display">Pantalla</string>
+    <string name="shortcut_display_subtitle">Ajustes de imagen</string>
+
+    <string name="shortcut_sound">Sonido</string>
+    <string name="shortcut_sound_subtitle">Ajustes de audio</string>
+
+    <string name="shortcut_accessibility">Acceso</string>
+    <string name="shortcut_accessibility_subtitle">Opciones de accesibilidad</string>
+
+    <string name="shortcut_developer">Desarrollo</string>
+    <string name="shortcut_developer_subtitle">Opciones avanzadas</string>
+
+    <string name="shortcut_keyboard">Teclado</string>
+    <string name="shortcut_keyboard_subtitle">Teclado y entrada</string>
+
+    <string name="shortcut_language">Idioma</string>
+    <string name="shortcut_language_subtitle">Idioma del sistema</string>
+
+    <string name="shortcut_date_time">Fecha y hora</string>
+    <string name="shortcut_date_time_subtitle">Reloj y zona horaria</string>
+
+    <string name="shortcut_about">Acerca de</string>
+    <string name="shortcut_about_subtitle">Información del dispositivo</string>
+
+</resources>

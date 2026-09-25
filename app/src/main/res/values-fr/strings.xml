@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Secreto TV Shortcuts</string>
+    <string name="app_tagline">Tout ce dont vous avez besoin, en un clic</string>
+
+    <string name="shortcut_play_store">Play Store</string>
+    <string name="shortcut_play_store_subtitle">Ouvrir Google Play Store</string>
+
+    <string name="shortcut_settings">Réglages</string>
+    <string name="shortcut_settings_subtitle">Paramètres système</string>
+
+    <string name="shortcut_wifi">Wi-Fi</string>
+    <string name="shortcut_wifi_subtitle">Paramètres réseau</string>
+
+    <string name="shortcut_bluetooth">Bluetooth</string>
+    <string name="shortcut_bluetooth_subtitle">Télécommandes et accessoires</string>
+
+    <string name="shortcut_apps">Apps</string>
+    <string name="shortcut_apps_subtitle">Applications installées</string>
+
+    <string name="shortcut_storage">Stockage</string>
+    <string name="shortcut_storage_subtitle">Stockage de l’appareil</string>
+
+    <string name="shortcut_display">Affichage</string>
+    <string name="shortcut_display_subtitle">Paramètres d’image</string>
+
+    <string name="shortcut_sound">Son</string>
+    <string name="shortcut_sound_subtitle">Paramètres audio</string>
+
+    <string name="shortcut_accessibility">Accès</string>
+    <string name="shortcut_accessibility_subtitle">Options d’accessibilité</string>
+
+    <string name="shortcut_developer">Dev</string>
+    <string name="shortcut_developer_subtitle">Paramètres avancés</string>
+
+    <string name="shortcut_keyboard">Clavier</string>
+    <string name="shortcut_keyboard_subtitle">Clavier et saisie</string>
+
+    <string name="shortcut_language">Langue</string>
+    <string name="shortcut_language_subtitle">Langue du système</string>
+
+    <string name="shortcut_date_time">Date &amp; heure</string>
+    <string name="shortcut_date_time_subtitle">Horloge et fuseau horaire</string>
+
+    <string name="shortcut_about">À propos</string>
+    <string name="shortcut_about_subtitle">Informations sur l’appareil</string>
+
+</resources>
