@@ -19,6 +19,9 @@
     <string name="shortcut_apps">Apps</string>
     <string name="shortcut_apps_subtitle">Aplicaciones instaladas</string>
 
+    <string name="shortcut_unknown_apps">Fuentes desconocidas</string>
+    <string name="shortcut_unknown_apps_subtitle">Instalar apps desconocidas</string>
+
     <string name="shortcut_storage">Almacén</string>
     <string name="shortcut_storage_subtitle">Almacenamiento del dispositivo</string>
 
@@ -45,5 +48,15 @@
 
     <string name="shortcut_about">Acerca de</string>
     <string name="shortcut_about_subtitle">Información del dispositivo</string>
+
+    <!-- Support the Developer -->
+    <string name="support">Apoyar al desarrollador</string>
+    <string name="support_sub">Apoya los proyectos SecretoTools</string>
+    <string name="support_title">Apoyar al desarrollador</string>
+    <string name="support_message">Si esta aplicación te resulta útil, puedes apoyar el desarrollo de futuros proyectos de SecretoTools.</string>
+    <string name="youtube_membership">Membresía de YouTube</string>
+    <string name="youtube_membership_sub">Únete a la membresía del canal Secretofnet</string>
+    <string name="scan_qr">Escanea este código QR con tu teléfono para unirte</string>
+    <string name="support_optional">El apoyo es completamente opcional. Gracias por apoyar el desarrollo independiente.</string>
 
 </resources>

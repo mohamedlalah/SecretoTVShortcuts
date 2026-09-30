@@ -11,6 +11,7 @@ enum class ShortcutType {
     WIFI,
     BLUETOOTH,
     APPS,
+    UNKNOWN_APPS,
     STORAGE,
     DISPLAY,
     SOUND,
@@ -44,6 +45,11 @@ class ShortcutLauncher(
 
             ShortcutType.APPS ->
                 launchSafely(Intent(Settings.ACTION_APPLICATION_SETTINGS))
+
+            ShortcutType.UNKNOWN_APPS ->
+                launchSafely(
+                    Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES)
+                )
 
             ShortcutType.STORAGE ->
                 launchSafely(Intent(Settings.ACTION_INTERNAL_STORAGE_SETTINGS))

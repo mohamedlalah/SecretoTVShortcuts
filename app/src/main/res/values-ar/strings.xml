@@ -19,6 +19,9 @@
     <string name="shortcut_apps">التطبيقات</string>
     <string name="shortcut_apps_subtitle">التطبيقات المثبتة</string>
 
+    <string name="shortcut_unknown_apps">مصادر خارجية</string>
+    <string name="shortcut_unknown_apps_subtitle">السماح بتثبيت التطبيقات</string>
+
     <string name="shortcut_storage">التخزين</string>
     <string name="shortcut_storage_subtitle">مساحة تخزين الجهاز</string>
 
@@ -45,5 +48,15 @@
 
     <string name="shortcut_about">حول</string>
     <string name="shortcut_about_subtitle">معلومات الجهاز</string>
+
+    <!-- Support the Developer -->
+    <string name="support">دعم المطور</string>
+    <string name="support_sub">ساهم في دعم مشاريع SecretoTools</string>
+    <string name="support_title">دعم المطور</string>
+    <string name="support_message">إذا كان هذا التطبيق مفيدًا لك، يمكنك دعم تطوير مشاريع SecretoTools المستقبلية.</string>
+    <string name="youtube_membership">عضوية YouTube</string>
+    <string name="youtube_membership_sub">انضم إلى عضوية قناة Secretofnet</string>
+    <string name="scan_qr">امسح رمز QR بهاتفك للانضمام</string>
+    <string name="support_optional">الدعم اختياري بالكامل. شكرًا لمساهمتك في دعم التطوير المستقل.</string>
 
 </resources>
