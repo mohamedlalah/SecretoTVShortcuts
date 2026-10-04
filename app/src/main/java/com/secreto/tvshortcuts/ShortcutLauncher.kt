@@ -41,7 +41,7 @@ class ShortcutLauncher(
                 launchSafely(Intent(Settings.ACTION_WIFI_SETTINGS))
 
             ShortcutType.BLUETOOTH ->
-                openBluetoothSettings()
+                openBluetoothAfterPermission()
 
             ShortcutType.APPS ->
                 launchSafely(Intent(Settings.ACTION_APPLICATION_SETTINGS))
@@ -123,7 +123,7 @@ class ShortcutLauncher(
      * Bluetooth devices directly.
      */
 
-    private fun openBluetoothSettings() {
+    fun openBluetoothAfterPermission() {
 
         /*
          * 1. Google TV / Android TV native
