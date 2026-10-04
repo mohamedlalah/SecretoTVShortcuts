@@ -4,6 +4,8 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.content.Intent
+import android.net.Uri
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
@@ -21,7 +23,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.core.content.ContextCompat
 import com.secreto.tvshortcuts.ui.ShortcutsScreen
-import com.secreto.tvshortcuts.ui.SupportScreen
+import com.secreto.tvshortcuts.ui.PrivacySupportScreen
 import com.secreto.tvshortcuts.ui.theme.SecretoTVShortcutsTheme
 import kotlinx.coroutines.delay
 
@@ -60,7 +62,7 @@ class MainActivity : ComponentActivity() {
                     mutableStateOf(true)
                 }
 
-                var showSupport by rememberSaveable {
+                var showPrivacySupport by rememberSaveable {
                     mutableStateOf(false)
                 }
 
@@ -82,15 +84,18 @@ class MainActivity : ComponentActivity() {
 
                 } else {
 
-                    BackHandler(enabled = showSupport) {
-                        showSupport = false
+                    BackHandler(enabled = showPrivacySupport) {
+                        showPrivacySupport = false
                     }
 
-                    if (showSupport) {
+                    if (showPrivacySupport) {
 
-                        SupportScreen(
+                        PrivacySupportScreen(
                             onBack = {
-                                showSupport = false
+                                showPrivacySupport = false
+                            },
+                            onPrivacyClick = {
+                                openPrivacyPolicy()
                             }
                         )
 
@@ -105,13 +110,23 @@ class MainActivity : ComponentActivity() {
                                     shortcutLauncher.launch(type)
                                 }
                             },
-                            onSupportClick = {
-                                showSupport = true
+                            onPrivacySupportClick = {
+                                showPrivacySupport = true
                             }
                         )
                     }
                 }
             }
+        }
+    }
+
+    private fun openPrivacyPolicy() {
+        val intent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse("https://secretotools.com/products/secreto-tv-shortcuts/privacy/")
+        )
+        runCatching {
+            startActivity(intent)
         }
     }
 
