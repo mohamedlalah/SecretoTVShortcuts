@@ -116,13 +116,14 @@ class ShortcutLauncher(
     }
 
     /*
-     * Bluetooth
+     * Bluetooth settings shortcut.
      *
-     * Called after Bluetooth permission has already
-     * been handled by MainActivity.
+     * The app only opens system-owned pairing/settings screens.
+     * It does not scan for, connect to, or communicate with
+     * Bluetooth devices directly.
      */
 
-    fun openBluetoothAfterPermission() {
+    private fun openBluetoothSettings() {
 
         /*
          * 1. Google TV / Android TV native
