@@ -22,7 +22,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -38,7 +37,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -202,7 +200,7 @@ private val shortcutItems = listOf(
 @Composable
 fun ShortcutsScreen(
     onShortcutClick: (ShortcutType) -> Unit,
-    onSupportClick: () -> Unit
+    onPrivacySupportClick: () -> Unit
 ) {
 
     val background = Brush.verticalGradient(
@@ -390,9 +388,9 @@ fun ShortcutsScreen(
                         }
                     )
 
-                    SupportCard(
+                    PrivacySupportCard(
                         modifier = Modifier.weight(1f),
-                        onClick = onSupportClick
+                        onClick = onPrivacySupportClick
                     )
                 }
             }
@@ -543,41 +541,28 @@ private fun ShortcutCard(
 
 
 // ============================================================
-// SUPPORT CARD
+// PRIVACY & SUPPORT CARD
 // ============================================================
 
 @Composable
-private fun SupportCard(
+private fun PrivacySupportCard(
     modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
-
-    var focused by remember {
-        mutableStateOf(false)
-    }
-
-    val title = stringResource(R.string.support)
-    val subtitle = stringResource(R.string.support_sub)
-
+    var focused by remember { mutableStateOf(false) }
+    val title = stringResource(R.string.privacy_support)
+    val subtitle = stringResource(R.string.privacy_support_sub)
     val scale by animateFloatAsState(
         targetValue = if (focused) 1.035f else 1.0f,
         animationSpec = tween(durationMillis = 110),
-        label = "supportCardScale"
+        label = "privacySupportCardScale"
     )
-
     val shape = RoundedCornerShape(18.dp)
-
     val cardBrush = Brush.linearGradient(
         colors = if (focused) {
-            listOf(
-                Color(0xFF454957),
-                Color(0xFF323541)
-            )
+            listOf(Color(0xFF454957), Color(0xFF323541))
         } else {
-            listOf(
-                Color(0xFF252735),
-                Color(0xFF1C1E29)
-            )
+            listOf(Color(0xFF252735), Color(0xFF1C1E29))
         }
     )
 
@@ -588,63 +573,31 @@ private fun SupportCard(
             .clip(shape)
             .background(cardBrush)
             .then(
-                if (focused) {
-                    Modifier.border(
-                        width = 2.5.dp,
-                        color = Color.White.copy(alpha = 0.96f),
-                        shape = shape
-                    )
-                } else {
-                    Modifier
-                }
+                if (focused) Modifier.border(2.5.dp, Color.White.copy(alpha = 0.96f), shape)
+                else Modifier
             )
-            .onFocusChanged {
-                focused = it.isFocused
-            }
-            .clickable {
-                onClick()
-            }
+            .onFocusChanged { focused = it.isFocused }
+            .clickable { onClick() }
             .focusable()
-            .padding(
-                horizontal = 15.dp,
-                vertical = 14.dp
-            )
+            .padding(horizontal = 15.dp, vertical = 14.dp)
     ) {
-
-        Row(
-            modifier = Modifier.fillMaxSize(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-
+        Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
             Box(
                 modifier = Modifier
                     .size(58.dp)
                     .clip(RoundedCornerShape(16.dp))
-                    .background(
-                        Color.White.copy(
-                            alpha = if (focused) 0.17f else 0.09f
-                        )
-                    ),
+                    .background(Color.White.copy(alpha = if (focused) 0.17f else 0.09f)),
                 contentAlignment = Alignment.Center
             ) {
-
                 Image(
-                    painter = painterResource(
-                        id = R.drawable.ic_support
-                    ),
+                    painter = painterResource(id = R.drawable.ic_support),
                     contentDescription = null,
                     modifier = Modifier.size(32.dp),
-                    colorFilter = ColorFilter.tint(Color(0xFFFF0033))
+                    colorFilter = ColorFilter.tint(Color(0xFF32A9FF))
                 )
             }
-
             Spacer(modifier = Modifier.width(13.dp))
-
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.Center
-            ) {
-
+            Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center) {
                 Text(
                     text = title,
                     color = Color.White,
@@ -654,14 +607,10 @@ private fun SupportCard(
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
-
                 Spacer(modifier = Modifier.height(5.dp))
-
                 Text(
                     text = subtitle,
-                    color = Color.White.copy(
-                        alpha = if (focused) 0.80f else 0.62f
-                    ),
+                    color = Color.White.copy(alpha = if (focused) 0.80f else 0.62f),
                     fontSize = subtitleFontSize(subtitle),
                     lineHeight = 17.sp,
                     maxLines = 2,
@@ -674,227 +623,142 @@ private fun SupportCard(
 
 
 // ============================================================
-// SUPPORT SCREEN
+// PRIVACY & SUPPORT SCREEN
 // ============================================================
 
 @Composable
-fun SupportScreen(
-    onBack: () -> Unit
+fun PrivacySupportScreen(
+    onBack: () -> Unit,
+    onPrivacyClick: () -> Unit
 ) {
-
     val background = Brush.verticalGradient(
-        colors = listOf(
-            Color(0xFF121522),
-            Color(0xFF0B0D16),
-            Color(0xFF07080E)
-        )
+        colors = listOf(Color(0xFF121522), Color(0xFF0B0D16), Color(0xFF07080E))
     )
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(background)
-    ) {
-
+    Box(modifier = Modifier.fillMaxSize().background(background)) {
         Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(
-                    Brush.radialGradient(
-                        colors = listOf(
-                            Color(0xFF1769FF).copy(alpha = 0.13f),
-                            Color(0xFF0B3A86).copy(alpha = 0.055f),
-                            Color.Transparent
-                        ),
-                        center = Offset(1700f, 80f),
-                        radius = 1100f
-                    )
+            modifier = Modifier.fillMaxSize().background(
+                Brush.radialGradient(
+                    colors = listOf(
+                        Color(0xFF1769FF).copy(alpha = 0.13f),
+                        Color(0xFF0B3A86).copy(alpha = 0.055f),
+                        Color.Transparent
+                    ),
+                    center = Offset(1700f, 80f),
+                    radius = 1100f
                 )
-        )
-
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(
-                    Brush.radialGradient(
-                        colors = listOf(
-                            Color(0xFF5036C8).copy(alpha = 0.08f),
-                            Color(0xFF17265E).copy(alpha = 0.035f),
-                            Color.Transparent
-                        ),
-                        center = Offset(100f, 950f),
-                        radius = 950f
-                    )
-                )
+            )
         )
 
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(
-                    start = 54.dp,
-                    end = 54.dp,
-                    top = 30.dp,
-                    bottom = 34.dp
-                )
+                .padding(start = 54.dp, end = 54.dp, top = 30.dp, bottom = 34.dp)
         ) {
-
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
-                Column(
-                    modifier = Modifier.weight(1f)
-                ) {
-
+                Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        text = stringResource(R.string.support_title),
+                        text = stringResource(R.string.privacy_support_title),
                         color = Color.White,
                         fontSize = 32.sp,
                         fontWeight = FontWeight.ExtraBold
                     )
-
                     Spacer(modifier = Modifier.height(5.dp))
-
                     Text(
-                        text = stringResource(R.string.support_message),
+                        text = stringResource(R.string.privacy_support_message),
                         color = Color.White.copy(alpha = 0.62f),
                         fontSize = 15.sp
                     )
                 }
-
                 Spacer(modifier = Modifier.width(24.dp))
-
-                BackButton(
-                    onClick = onBack
-                )
+                BackButton(onClick = onBack)
             }
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(28.dp))
 
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f),
-                horizontalArrangement = Arrangement.spacedBy(34.dp),
+                modifier = Modifier.fillMaxWidth().weight(1f),
+                horizontalArrangement = Arrangement.spacedBy(24.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
-                Column(
+                InfoPanel(
+                    title = stringResource(R.string.privacy_policy),
+                    value = stringResource(R.string.privacy_policy_sub),
                     modifier = Modifier.weight(1f),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-
-                    Image(
-                        painter = painterResource(
-                            id = R.drawable.secretofnet_channel
-                        ),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(140.dp)
-                            .clip(CircleShape),
-                        contentScale = ContentScale.Fit
-                    )
-
-                    Spacer(modifier = Modifier.height(16.dp))
-
-                    Text(
-                        text = "Secretofnet",
-                        color = Color.White,
-                        fontSize = 27.sp,
-                        fontWeight = FontWeight.ExtraBold
-                    )
-
-                    Spacer(modifier = Modifier.height(8.dp))
-
-                    Text(
-                        text = stringResource(
-                            R.string.youtube_membership_sub
-                        ),
-                        color = Color.White.copy(alpha = 0.68f),
-                        fontSize = 16.sp,
-                        textAlign = TextAlign.Center
-                    )
-                }
-
-                Box(
-                    modifier = Modifier
-                        .weight(1f)
-                        .clip(RoundedCornerShape(24.dp))
-                        .background(
-                            Brush.linearGradient(
-                                colors = listOf(
-                                    Color(0xFF252735),
-                                    Color(0xFF1C1E29)
-                                )
-                            )
-                        )
-                        .border(
-                            width = 1.dp,
-                            color = Color.White.copy(alpha = 0.10f),
-                            shape = RoundedCornerShape(24.dp)
-                        )
-                        .padding(20.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-
-                        Text(
-                            text = stringResource(
-                                R.string.youtube_membership
-                            ),
-                            color = Color.White,
-                            fontSize = 23.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-
-                        Spacer(modifier = Modifier.height(12.dp))
-
-                        Box(
-                            modifier = Modifier
-                                .size(190.dp)
-                                .clip(RoundedCornerShape(16.dp))
-                                .background(Color.White)
-                                .padding(9.dp),
-                            contentAlignment = Alignment.Center
-                        ) {
-
-                            Image(
-                                painter = painterResource(
-                                    id = R.drawable.youtube_membership_qr
-                                ),
-                                contentDescription = null,
-                                modifier = Modifier.fillMaxSize(),
-                                contentScale = ContentScale.Fit
-                            )
-                        }
-
-                        Spacer(modifier = Modifier.height(12.dp))
-
-                        Text(
-                            text = stringResource(R.string.scan_qr),
-                            color = Color.White.copy(alpha = 0.78f),
-                            fontSize = 15.sp,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
+                    clickable = true,
+                    onClick = onPrivacyClick
+                )
+                InfoPanel(
+                    title = stringResource(R.string.support_email),
+                    value = "support@secretotools.com",
+                    modifier = Modifier.weight(1f)
+                )
+                InfoPanel(
+                    title = stringResource(R.string.developer),
+                    value = "Mohamed LALAH / SecretoTools",
+                    modifier = Modifier.weight(1f)
+                )
+                InfoPanel(
+                    title = stringResource(R.string.version),
+                    value = "1.2.0",
+                    modifier = Modifier.weight(1f)
+                )
             }
+        }
+    }
+}
 
-            Spacer(modifier = Modifier.height(14.dp))
+@Composable
+private fun InfoPanel(
+    title: String,
+    value: String,
+    modifier: Modifier = Modifier,
+    clickable: Boolean = false,
+    onClick: () -> Unit = {}
+) {
+    var focused by remember { mutableStateOf(false) }
+    val shape = RoundedCornerShape(20.dp)
+    var panelModifier = modifier
+        .height(190.dp)
+        .clip(shape)
+        .background(
+            if (focused) Color(0xFF343744) else Color(0xFF20232F)
+        )
+        .then(
+            if (focused) Modifier.border(2.5.dp, Color.White.copy(alpha = 0.96f), shape)
+            else Modifier.border(1.dp, Color.White.copy(alpha = 0.10f), shape)
+        )
 
+    if (clickable) {
+        panelModifier = panelModifier
+            .onFocusChanged { focused = it.isFocused }
+            .clickable { onClick() }
+            .focusable()
+    }
+
+    Box(
+        modifier = panelModifier.padding(20.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
-                text = stringResource(R.string.support_optional),
-                color = Color.White.copy(alpha = 0.48f),
-                fontSize = 13.sp,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+                text = title,
+                color = Color(0xFF32A9FF),
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+            Text(
+                text = value,
+                color = Color.White.copy(alpha = 0.82f),
+                fontSize = 15.sp,
+                lineHeight = 20.sp,
+                textAlign = TextAlign.Center
             )
         }
     }
