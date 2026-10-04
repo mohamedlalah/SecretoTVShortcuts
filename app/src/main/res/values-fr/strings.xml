@@ -49,14 +49,15 @@
     <string name="shortcut_about">À propos</string>
     <string name="shortcut_about_subtitle">Informations sur l’appareil</string>
 
-    <!-- Support the Developer -->
-    <string name="support">Soutenir le développeur</string>
-    <string name="support_sub">Soutenez les projets SecretoTools</string>
-    <string name="support_title">Soutenir le développeur</string>
-    <string name="support_message">Si cette application vous est utile, vous pouvez soutenir le développement des futurs projets SecretoTools.</string>
-    <string name="youtube_membership">Abonnement YouTube</string>
-    <string name="youtube_membership_sub">Rejoignez les membres de la chaîne Secretofnet</string>
-    <string name="scan_qr">Scannez ce QR code avec votre téléphone pour nous rejoindre</string>
-    <string name="support_optional">Le soutien est entièrement facultatif. Merci de soutenir le développement indépendant.</string>
+    <!-- Privacy & Support -->
+    <string name="privacy_support">Confidentialité et assistance</string>
+    <string name="privacy_support_sub">Politique de confidentialité et contact</string>
+    <string name="privacy_support_title">Confidentialité et assistance</string>
+    <string name="privacy_support_message">Informations officielles sur la confidentialité et assistance pour Secreto TV Shortcuts.</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
+    <string name="privacy_policy_sub">Ouvrir sur secretotools.com</string>
+    <string name="support_email">Assistance</string>
+    <string name="developer">Développeur</string>
+    <string name="version">Version</string>
 
 </resources>
