@@ -26,7 +26,7 @@
 
     <uses-feature
         android:name="android.software.leanback"
-        android:required="false" />
+        android:required="true" />
 
     <queries>
 
