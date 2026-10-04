@@ -41,7 +41,7 @@ class ShortcutLauncher(
                 launchSafely(Intent(Settings.ACTION_WIFI_SETTINGS))
 
             ShortcutType.BLUETOOTH ->
-                openBluetoothAfterPermission()
+                openBluetoothSettings()
 
             ShortcutType.APPS ->
                 launchSafely(Intent(Settings.ACTION_APPLICATION_SETTINGS))
